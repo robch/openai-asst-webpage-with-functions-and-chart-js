@@ -19,7 +19,16 @@ ai dev new openai-asst-webpage-with-functions --javascript
 📘 Read [The Book of AI](https://thebookof.ai) to get started with Azure AI here: [https://thebookof.ai/](https://thebookof.ai).  
 🚀 Read below for instructions on how to set up and run this sample website locally.  
 
-## STEP 1: Create or update your OpenAI Assistant instructions
+## STEP 1: Clone this repository
+
+First, you'll need to clone this repository to your local machine.  
+
+```bash
+git clone https://github.com/robch/openai-asst-webpage-with-functions-and-chart-js.git
+cd openai-asst-webpage-with-functions-and-chart-js
+```
+
+## STEP 2: Create or update your OpenAI Assistant instructions
 
 This sample uses specialized OpenAI Assistant instructions ([assistant.instructions](.ai/data/assistant.instructions)) to generate charts using `Chart.js`.  
 
@@ -44,7 +53,7 @@ ai config --set assistant.id YOUR-ASSISTANT-ID
 ai chat assistant update --instructions @assistant.instructions
 ```
 
-## STEP 2: Create a `.env` file with configuration settings
+## STEP 3: Create a `.env` file with configuration settings
 
 This sample uses environment variables to retrieve the Azure OpenAI Assistant ID and other settings.  
 
@@ -60,7 +69,7 @@ You can update the `.env` file using the Azure AI CLI (`ai`):
 ai dev new .env
 ```
 
-## STEP 3: Serve the website locally 
+## STEP 4: Serve the website locally 
 
 Use `npm` to install the required packages.  
 Use `npm` (`vite` under the covers) to serve the website locally.  
