@@ -59,32 +59,4 @@ const getCurrentTimeSchema = {
 
 factory.addFunction(getCurrentTimeSchema, getCurrentTime);
 
-function getRecommendedOilChangeForManufacturer(function_arguments) {
-  const manufacturer = JSON.parse(function_arguments).manufacturer;
-  // use tolower case and check for contains
-  if (manufacturer.toLowerCase().includes("ford")) {
-    return 5000;
-  } else if (manufacturer.toLowerCase().includes("toyota")) {
-    return 10000;
-  } else {
-    return 7500;
-  }
-}
-
-const getRecommendedOilChangeForManufacturerSchema = {
-  name: "get_recommend_oil_change_milesage_for_manufacturer",
-  description: "Get the recommended oil change mileage for a given manufacturer",
-  parameters: {
-    type: "object",
-    properties: {
-      manufacturer: {
-        type: "string",
-        description: "The manufacturer of the vehicle",
-      },
-    },
-    required: ["manufacturer"],
-  },
-};
-
-factory.addFunction(getRecommendedOilChangeForManufacturerSchema, getRecommendedOilChangeForManufacturer);
 export { factory };
